@@ -6,22 +6,20 @@ import CodeTerminal from './components/CodeTerminal';
 import RepositoryVault from './components/RepositoryVault';
 import AhmedsTip from './components/AhmedsTip';
 import ContactForm from './components/ContactForm';
+import BackgroundVideo from './components/BackgroundVideo';
+import SocialDock from './components/SocialDock';
 import { TIPS } from './constants';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
     <div className="min-h-screen selection:bg-gold selection:text-luxury-black">
+      <BackgroundVideo />
       <Header />
       
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_50%)]" />
-            <div className="absolute inset-0 bg-luxury-black/40" />
-          </div>
-
           <div className="relative z-10 text-center max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -96,7 +94,9 @@ export default function App() {
         <ContactForm />
       </main>
 
-      <footer className="py-12 px-6 border-t border-white/5 text-center">
+      <SocialDock />
+
+      <footer className="py-12 px-6 border-t border-white/5 text-center relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-left">
             <div className="text-sm font-bold tracking-tighter uppercase mb-2">Travel Expert ™</div>
