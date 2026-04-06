@@ -11,16 +11,16 @@ export default function BackgroundVideo() {
         playsInline
         className="absolute min-w-full min-h-full object-cover"
       >
-        <source 
-          src="https://assets.mixkit.co/videos/preview/mixkit-luxury-hotel-lobby-with-a-large-chandelier-42353-large.mp4" 
-          type="video/mp4" 
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-luxury-hotel-pool-12564-large.mp4"
+          type="video/mp4"
         />
         Your browser does not support the video tag.
       </video>
 
       {/* Cinematic Overlay */}
       <div className="absolute inset-0 bg-luxury-black/60 backdrop-blur-[2px]" />
-      
+
       {/* Gradient Vignette for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-luxury-black/40 via-transparent to-luxury-black/80" />
     </div>
