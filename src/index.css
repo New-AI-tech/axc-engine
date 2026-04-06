@@ -32,4 +32,16 @@ body {
 main,
 section {
   background-color: transparent !important;
+
+  /* FORCE TRANSPARENCY ACROSS THE ENGINE */
+  main,
+  section,
+  #root {
+    background-color: transparent !important;
+  }
+
+  /* Ensure the body doesn't have a solid 'paint' over the video */
+  body {
+    background-color: #000 !important;
+  }
 }
