@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'; // Standardized for stability
+import { motion } from 'framer-motion';
 import Header from './components/Header';
 import ServiceEngine from './components/ServiceEngine';
 import TravelSuite from './components/TravelSuite';
@@ -13,19 +13,19 @@ import { ChevronRight, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
-    /* LOGICAL FIX: Changed selection colors to standard gold/black for reliability */
-    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-black text-white overflow-x-hidden">
+    /* LOGICAL BREACH: Removing bg-black to allow BackgroundVideo to shine through */
+    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-white overflow-x-hidden font-sans">
 
-      {/* 1. The Base Layer */}
+      {/* Base Layer */}
       <BackgroundVideo />
 
-      {/* 2. The Navigation Layer */}
+      {/* Navigation */}
       <Header />
 
-      {/* 3. The Content Layer - Ensure relative z-10 for interaction */}
+      {/* Content Layer */}
       <main className="relative z-10">
 
-        {/* Hero Section - Pure Transparency */}
+        {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
           <div className="relative z-10 text-center max-w-4xl">
             <motion.div
@@ -40,7 +40,7 @@ export default function App() {
                 The <span className="text-zinc-500 italic">AI</span> <br />
                 Concierge.
               </h1>
-              <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed text-balance">
+              <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
                 Senior Luxury Travel Consultant meets Agentic AI Engineer. <br />
                 Bridging the gap between <span className="text-zinc-100">high-end hospitality</span> and <span className="text-zinc-100">cutting-edge automation</span>.
               </p>
@@ -72,7 +72,7 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Code Preview - Minimal Background Blur */}
+        {/* Infrastructure / Code Preview */}
         <section className="py-24 px-6 bg-black/20 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -83,7 +83,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Integrated Components */}
         <ServiceEngine />
         <TravelSuite />
         <RepositoryVault />
@@ -100,10 +99,8 @@ export default function App() {
         <ContactForm />
       </main>
 
-      {/* 4. The Functional Layer */}
       <SocialDock />
 
-      {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5 text-center relative z-10 bg-black/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-left">
@@ -113,8 +110,7 @@ export default function App() {
             </p>
           </div>
           <div className="flex gap-8">
-            {/* Note: Links here are static; SocialDock handles the actual profiles */}
-            <span className="text-[10px] uppercase tracking-widest text-zinc-700 font-bold">Connectivity Enabled</span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-700 font-bold italic">Dubai | Global Remote</span>
           </div>
         </div>
       </footer>
