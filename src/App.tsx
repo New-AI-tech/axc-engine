@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'; // Standardized for stability
 import Header from './components/Header';
 import ServiceEngine from './components/ServiceEngine';
 import TravelSuite from './components/TravelSuite';
@@ -13,12 +13,19 @@ import { ChevronRight, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-gold selection:text-luxury-black">
+    /* LOGICAL FIX: Changed selection colors to standard gold/black for reliability */
+    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-black text-white overflow-x-hidden">
+
+      {/* 1. The Base Layer */}
       <BackgroundVideo />
+
+      {/* 2. The Navigation Layer */}
       <Header />
-      
+
+      {/* 3. The Content Layer - Ensure relative z-10 for interaction */}
       <main className="relative z-10">
-        {/* Hero Section */}
+
+        {/* Hero Section - Pure Transparency */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
           <div className="relative z-10 text-center max-w-4xl">
             <motion.div
@@ -26,28 +33,28 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-gold text-xs uppercase tracking-[0.5em] font-medium mb-6 block">
+              <span className="text-yellow-500 text-xs uppercase tracking-[0.5em] font-medium mb-6 block">
                 Luxury Travel | Storytelling | AI-Optimized Experiences ™
               </span>
               <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-[0.9]">
                 The <span className="text-zinc-500 italic">AI</span> <br />
                 Concierge.
               </h1>
-              <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+              <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed text-balance">
                 Senior Luxury Travel Consultant meets Agentic AI Engineer. <br />
                 Bridging the gap between <span className="text-zinc-100">high-end hospitality</span> and <span className="text-zinc-100">cutting-edge automation</span>.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a 
-                  href="#travel" 
-                  className="group flex items-center gap-3 px-8 py-4 bg-zinc-100 text-luxury-black font-bold text-xs uppercase tracking-widest hover:bg-gold transition-all"
+                <a
+                  href="#travel"
+                  className="group flex items-center gap-3 px-8 py-4 bg-zinc-100 text-black font-bold text-xs uppercase tracking-widest hover:bg-yellow-500 transition-all"
                 >
                   Explore Travel Suite
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a 
-                  href="#services" 
+                <a
+                  href="#services"
                   className="text-xs uppercase tracking-widest text-zinc-400 hover:text-zinc-100 transition-colors border-b border-zinc-800 pb-1"
                 >
                   View AI Service Engine
@@ -56,7 +63,7 @@ export default function App() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-600"
@@ -65,21 +72,20 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Code Preview Section */}
-        <section className="py-24 px-6 bg-zinc-900/20">
+        {/* Code Preview - Minimal Background Blur */}
+        <section className="py-24 px-6 bg-black/20 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-[10px] uppercase tracking-widest text-gold/60 mb-2 block">Infrastructure</span>
-              <h2 className="text-3xl font-light italic">"Smart, Not Smug."</h2>
+              <span className="text-[10px] uppercase tracking-widest text-yellow-500/60 mb-2 block">Infrastructure</span>
+              <h2 className="text-3xl font-light italic text-white/90">"Smart, Not Smug."</h2>
             </div>
             <CodeTerminal />
           </div>
         </section>
 
+        {/* Integrated Components */}
         <ServiceEngine />
-        
         <TravelSuite />
-
         <RepositoryVault />
 
         {/* Insights Section */}
@@ -94,9 +100,11 @@ export default function App() {
         <ContactForm />
       </main>
 
+      {/* 4. The Functional Layer */}
       <SocialDock />
 
-      <footer className="py-12 px-6 border-t border-white/5 text-center relative z-10">
+      {/* Footer */}
+      <footer className="py-12 px-6 border-t border-white/5 text-center relative z-10 bg-black/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-left">
             <div className="text-sm font-bold tracking-tighter uppercase mb-2">Travel Expert ™</div>
@@ -105,11 +113,8 @@ export default function App() {
             </p>
           </div>
           <div className="flex gap-8">
-            {['LinkedIn', 'GitHub', 'Instagram'].map(social => (
-              <a key={social} href="#" className="text-[10px] uppercase tracking-widest text-zinc-500 hover:text-gold transition-colors">
-                {social}
-              </a>
-            ))}
+            {/* Note: Links here are static; SocialDock handles the actual profiles */}
+            <span className="text-[10px] uppercase tracking-widest text-zinc-700 font-bold">Connectivity Enabled</span>
           </div>
         </div>
       </footer>
