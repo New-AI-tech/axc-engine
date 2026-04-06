@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold: #D4AF37;
+  --color-luxury-black: #0A0A0A;
+  --color-luxury-gray: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-black text-zinc-100 antialiased selection:bg-gold selection:text-black;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans tracking-tighter;
+  }
+}
+
+.glass-card {
+  @apply bg-luxury-gray/50 border border-white/5 backdrop-blur-sm;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 to-zinc-500;
+}
