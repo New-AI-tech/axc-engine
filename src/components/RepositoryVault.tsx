@@ -1,56 +1,90 @@
-import { motion } from 'motion/react';
-import { Github, ExternalLink, Code2 } from 'lucide-react';
-import { PROJECTS } from '../constants';
+import React from 'react';
+import { ExternalLink, Github, Terminal, Cpu, Layers, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-export default function RepositoryVault() {
+const projects = [
+  {
+    title: "Dubai Kiosk 🇦🇪",
+    description: "The 'Golden Triangle' Architecture: A multi-cloud Headless Kiosk for luxury tourism. Real-time Voice-to-Visual sync via Vapi.ai and Socket.io bridge.",
+    tech: ["Vapi.ai", "Node.js", "Socket.io", "React"],
+    link: "https://github.com/AIexpert-ig/dubai-kiosk",
+    github: "https://github.com/AIexpert-ig/dubai-kiosk",
+    icon: Cpu,
+    status: "Live"
+  },
+  {
+    title: "Hospitality Concierge",
+    description: "AI Voice Receptionist built with ElevenLabs. Handles reservations and VIP services with human-like empathy and zero-latency conversation.",
+    tech: ["ElevenLabs", "WebRTC", "CDN", "JavaScript"],
+    link: "https://aiexpert-ig.github.io/hospitality-concierge/",
+    github: "https://github.com/AIexpert-ig/hospitality-concierge",
+    icon: MessageSquare,
+    status: "Live"
+  },
+  {
+    title: "Faryal Al Hosary ERP",
+    description: "Enterprise ERP & Bridal Vault. Features a PostgreSQL availability engine, SKU-level tracking, and specialized luxury garment management.",
+    tech: ["PostgreSQL", "React", "Node.js", "Vercel"],
+    link: "https://faryal-al-hosary.vercel.app/",
+    github: "https://github.com/AIexpert-ig/faryal-al-hosary",
+    icon: Layers,
+    status: "Live"
+  },
+  {
+    title: "Instagram Concierge",
+    description: "Automated high-end lead capture and luxury guest engagement for social platforms. Integrating AI logic with DM automation.",
+    tech: ["Python", "Meta API", "OpenAI"],
+    link: "#",
+    github: "#",
+    icon: Terminal,
+    status: "Coming Soon"
+  }
+];
+
+export default function ProjectVault() {
   return (
-    <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <h2 className="text-4xl font-light mb-4">The Repository Vault</h2>
-          <p className="text-zinc-500 max-w-xl">
-            A curated collection of agentic workflows, RAG systems, and automation tools.
-          </p>
-        </div>
-        <a 
-          href="#" 
-          className="flex items-center gap-2 text-xs uppercase tracking-widest text-gold hover:text-zinc-100 transition-colors"
-        >
-          <Github className="w-4 h-4" />
-          View All GitHub
-        </a>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-1">
-        {PROJECTS.map((project, i) => (
+    <section className="py-20 px-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project, index) => (
           <motion.div
-            key={project.id}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="group relative bg-luxury-gray/30 p-8 border border-white/5 hover:bg-luxury-gray/50 transition-all"
+            key={project.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="glass-card p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md relative overflow-hidden group"
           >
             <div className="flex justify-between items-start mb-6">
-              <div className="p-2 bg-zinc-800/50 rounded-sm">
-                <Code2 className="w-5 h-5 text-zinc-400 group-hover:text-gold transition-colors" />
+              <div className="p-3 bg-white/10 rounded-2xl">
+                <project.icon className="w-6 h-6 text-white" />
               </div>
-              <div className="flex gap-4">
-                <ExternalLink className="w-4 h-4 text-zinc-600 hover:text-zinc-100 cursor-pointer" />
-              </div>
+              <span className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${project.status === "Coming Soon" ? "bg-gold/20 text-gold" : "bg-white/10 text-white/60"
+                }`}>
+                {project.status}
+              </span>
             </div>
 
-            <h3 className="text-xl font-medium mb-2">{project.title}</h3>
-            <p className="text-zinc-500 text-sm mb-6 leading-relaxed">
-              {project.description}
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{project.title}</h3>
+            <p className="text-white/60 mb-6 leading-relaxed text-sm">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-8">
               {project.tech.map(t => (
-                <span key={t} className="text-[9px] px-2 py-1 bg-white/5 text-zinc-400 uppercase tracking-tighter">
+                <span key={t} className="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded-md text-white/40 uppercase font-medium">
                   {t}
                 </span>
               ))}
+            </div>
+
+            <div className="flex gap-4">
+              {project.status !== "Coming Soon" && (
+                <>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-white hover:text-gold transition-colors">
+                    <ExternalLink className="w-4 h-4" /> DEPLOYMENT
+                  </a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-white/40 hover:text-white transition-colors">
+                    <Github className="w-4 h-4" /> SOURCE
+                  </a>
+                </>
+              )}
             </div>
           </motion.div>
         ))}
