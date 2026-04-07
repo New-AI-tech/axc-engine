@@ -8,19 +8,15 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        /* LOGICAL FIX: Max visibility. Opacity 100% and higher brightness. 
-           This makes the Museum of the Future the 'Main Event'. */
-        className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-[0.95]"
+        /* LOGICAL FIX: High-availability Wikimedia source for guaranteed production uptime */
+        className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-[0.7]"
       >
-        <source src="/bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <source
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Museum_of_the_Future_Dubai_Drone_Shot.mp4"
+          type="video/mp4"
+        />
       </video>
-
-      {/* Cinematic Vignette: Only darkens the edges to keep text readable */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90" />
-
-      {/* Subtle radial light to highlight the center (the Museum) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
     </div>
   );
 }
