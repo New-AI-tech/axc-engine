@@ -8,20 +8,18 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-40 brightness-50"
+        /* LOGICAL FIX: Added a reliable, direct MP4 link from a cloud-friendly CDN */
+        className="absolute inset-0 w-full h-full object-cover opacity-50 brightness-[0.4]"
       >
-        {/* 1. Try local file first (If you uploaded it to public/) */}
-        <source src="/bg-video.mp4" type="video/mp4" />
-
-        {/* 2. Reliable CDN Fallback (Higher availability than Mixkit) */}
         <source
-          src="https://cdn.pixabay.com/video/2023/10/20/185805-876380694_large.mp4"
+          src="https://joy1.videvo.net/videvo_files/video/free/2019-11/190416_01_Drone_1_04.mp4"
           type="video/mp4"
         />
+        Your browser does not support the video tag.
       </video>
 
       {/* Cinematic Overlay */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
     </div>
   );
 }

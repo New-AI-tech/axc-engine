@@ -14,7 +14,7 @@ import { ChevronRight, ArrowDown } from 'lucide-react';
 export default function App() {
   return (
     /* LOGICAL BREACH: Removing bg-black to allow BackgroundVideo to shine through */
-    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-white overflow-x-hidden font-sans">
+    <div className="min-h-screen selection:bg-yellow-500 ... bg-transparent text-white ...">
 
       {/* Base Layer */}
       <BackgroundVideo />
