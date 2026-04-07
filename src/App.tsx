@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import { ChevronRight, ArrowDown } from 'lucide-react';
+
+// Components
 import Header from './components/Header';
 import ServiceEngine from './components/ServiceEngine';
 import TravelSuite from './components/TravelSuite';
@@ -8,23 +11,24 @@ import AhmedsTip from './components/AhmedsTip';
 import ContactForm from './components/ContactForm';
 import BackgroundVideo from './components/BackgroundVideo';
 import SocialDock from './components/SocialDock';
+
+// Constants
 import { TIPS } from './constants';
-import { ChevronRight, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
     <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-white overflow-x-hidden font-sans">
 
-      {/* Base Layer */}
+      {/* Level -1: Atmosphere */}
       <BackgroundVideo />
 
-      {/* Navigation - Locked to top */}
+      {/* Level 50: Command Center */}
       <Header />
 
-      {/* Content Layer - Elevated to capture clicks */}
+      {/* Level 10: Content Layers */}
       <main className="relative z-10 w-full">
 
-        {/* Hero Section */}
+        {/* SECTION: HERO */}
         <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden px-6">
           <div className="relative z-10 text-center max-w-4xl">
             <motion.div
@@ -71,7 +75,7 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Infrastructure Section */}
+        {/* SECTION: INFRASTRUCTURE */}
         <section className="py-24 px-6 bg-black/20 backdrop-blur-sm relative z-20">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -82,11 +86,51 @@ export default function App() {
           </div>
         </section>
 
-        {/* SERVICES SECTION - FIXED ID */}
+        {/* SECTION: SERVICES (Anchor Link Target) */}
         <section id="services" className="relative z-20">
           <ServiceEngine />
         </section>
 
-        {/* TRAVEL SECTION - FIXED ID */}
+        {/* SECTION: TRAVEL (Anchor Link Target) */}
         <section id="travel" className="relative z-20">
-          <Travel
+          <TravelSuite />
+        </section>
+
+        {/* SECTION: PROJECTS (Anchor Link Target) */}
+        <section id="projects" className="relative z-20">
+          <RepositoryVault />
+        </section>
+
+        {/* SECTION: INSIGHTS */}
+        <section id="insights" className="py-24 px-6 max-w-7xl mx-auto relative z-20">
+          <div className="grid md:grid-cols-3 gap-6">
+            {TIPS.map(tip => (
+              <AhmedsTip key={tip.id} tip={tip} />
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION: CONTACT */}
+        <section id="contact" className="relative z-20">
+          <ContactForm />
+        </section>
+      </main>
+
+      <SocialDock />
+
+      <footer className="py-12 px-6 border-t border-white/5 text-center relative z-20 bg-black/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-left">
+            <div className="text-sm font-bold tracking-tighter uppercase mb-2">Travel Expert ™</div>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">
+              © 2026 Ahmed's AI Concierge. All Rights Reserved.
+            </p>
+          </div>
+          <div className="flex gap-8">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-700 font-bold italic">Dubai | Global Remote</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
