@@ -36,8 +36,8 @@ export default function App() {
               <span className="text-yellow-500 text-xs uppercase tracking-[0.5em] font-medium mb-6 block">
                 Luxury Travel | Storytelling | AI-Optimized Experiences ™
               </span>
-              <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-[0.9]">
-                The <span className="text-zinc-500 italic">AI</span> <br />
+              <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-[0.9] drop-shadow-2xl">
+                The <span className="text-zinc-300 italic">AI</span> <br />
                 Concierge.
               </h1>
               <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
