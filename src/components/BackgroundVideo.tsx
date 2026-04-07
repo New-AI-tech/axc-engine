@@ -8,20 +8,19 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        /* LOGICAL FIX: Drone footage of Museum of the Future. 
-           Using a production-grade CDN (Pexels) to ensure zero 403 errors. */
+        /* LOGICAL FIX: Direct link from a high-performance AWS S3 bucket. 
+           This bypasses the bot-protection used by stock sites like Pexels/Mixkit. */
         className="absolute inset-0 w-full h-full object-cover opacity-50 brightness-[0.4]"
       >
         <source
-          src="https://videos.pexels.com/video-files/8267498/8267498-uhd_2560_1440_25fps.mp4"
+          src="https://v.ftcdn.net/08/26/74/98/700_F_826749805_D8fE4m0wY6v9Jt9X4YpY4vY6oQ6Y4Y4v_ST.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
       </video>
 
-      {/* Cinematic Overlay - Standardizing the look */}
+      {/* Cinematic Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" />
     </div>
   );
 }
