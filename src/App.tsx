@@ -13,20 +13,19 @@ import { ChevronRight, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
-    /* LOGICAL BREACH: Removing bg-black to allow BackgroundVideo to shine through */
-    <div className="min-h-screen selection:bg-yellow-500 ... bg-transparent text-white ...">
+    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-white overflow-x-hidden font-sans">
 
       {/* Base Layer */}
       <BackgroundVideo />
 
-      {/* Navigation */}
+      {/* Navigation - Locked to top */}
       <Header />
 
-      {/* Content Layer */}
-      <main className="relative z-10">
+      {/* Content Layer - Elevated to capture clicks */}
+      <main className="relative z-10 w-full">
 
         {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
+        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden px-6">
           <div className="relative z-10 text-center max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,8 +71,8 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Infrastructure / Code Preview */}
-        <section className="py-24 px-6 bg-black/20 backdrop-blur-sm">
+        {/* Infrastructure Section */}
+        <section className="py-24 px-6 bg-black/20 backdrop-blur-sm relative z-20">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-[10px] uppercase tracking-widest text-yellow-500/60 mb-2 block">Infrastructure</span>
@@ -83,37 +82,11 @@ export default function App() {
           </div>
         </section>
 
-        <ServiceEngine />
-        <TravelSuite />
-        <RepositoryVault />
-
-        {/* Insights Section */}
-        <section className="py-24 px-6 max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            {TIPS.map(tip => (
-              <AhmedsTip key={tip.id} tip={tip} />
-            ))}
-          </div>
+        {/* SERVICES SECTION - FIXED ID */}
+        <section id="services" className="relative z-20">
+          <ServiceEngine />
         </section>
 
-        <ContactForm />
-      </main>
-
-      <SocialDock />
-
-      <footer className="py-12 px-6 border-t border-white/5 text-center relative z-10 bg-black/40 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-left">
-            <div className="text-sm font-bold tracking-tighter uppercase mb-2">Travel Expert ™</div>
-            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">
-              © 2026 Ahmed's AI Concierge. All Rights Reserved.
-            </p>
-          </div>
-          <div className="flex gap-8">
-            <span className="text-[10px] uppercase tracking-widest text-zinc-700 font-bold italic">Dubai | Global Remote</span>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+        {/* TRAVEL SECTION - FIXED ID */}
+        <section id="travel" className="relative z-20">
+          <Travel
