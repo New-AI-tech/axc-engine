@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Header() {
