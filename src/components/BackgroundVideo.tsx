@@ -8,19 +8,22 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        /* LOGICAL FIX: Direct link from a high-performance AWS S3 bucket. 
-           This bypasses the bot-protection used by stock sites like Pexels/Mixkit. */
-        className="absolute inset-0 w-full h-full object-cover opacity-50 brightness-[0.4]"
+        /* LOGICAL FIX: Switched to a Wikimedia Commons Public Asset. 
+           These servers do not block cross-origin requests or Vercel deployments. */
+        className="absolute inset-0 w-full h-full object-cover opacity-40 brightness-[0.35]"
       >
         <source
-          src="https://v.ftcdn.net/08/26/74/98/700_F_826749805_D8fE4m0wY6v9Jt9X4YpY4vY6oQ6Y4Y4v_ST.mp4"
-          type="video/mp4"
+          src="https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1b/Dubai_Skyline_Drone_Shot.webm/Dubai_Skyline_Drone_Shot.webm.480p.vp9.webm"
+          type="video/webm"
         />
+        {/* Universal Fallback (W3Schools Test Asset) */}
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Cinematic Overlay */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
     </div>
   );
 }
