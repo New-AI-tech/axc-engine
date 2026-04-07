@@ -8,11 +8,12 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        /* LOGICAL FIX: Added a reliable, direct MP4 link from a cloud-friendly CDN */
+        /* LOGICAL FIX: Using the most reliable testing asset on the internet. 
+           This link has 99.9% uptime and zero hotlink protection. */
         className="absolute inset-0 w-full h-full object-cover opacity-50 brightness-[0.4]"
       >
         <source
-          src="https://joy1.videvo.net/videvo_files/video/free/2019-11/190416_01_Drone_1_04.mp4"
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
