@@ -8,19 +8,19 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        /* LOGICAL ADJUSTMENT: Increased opacity to 80% and brightness to 80% 
-           This brings the Museum of the Future into high-definition focus. */
-        className="absolute inset-0 w-full h-full object-cover opacity-80 brightness-[0.8]"
+        /* LOGICAL FIX: Max visibility. Opacity 100% and higher brightness. 
+           This makes the Museum of the Future the 'Main Event'. */
+        className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-[0.95]"
       >
         <source src="/bg-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Cinematic Gradient Overlay: Dark on top/bottom, Clear in the middle */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+      {/* Cinematic Vignette: Only darkens the edges to keep text readable */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90" />
 
-      {/* Subtle Blur only on the edges to draw the eye to the MOTF */}
-      <div className="absolute inset-0 backdrop-blur-[0.5px]" />
+      {/* Subtle radial light to highlight the center (the Museum) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
     </div>
   );
 }

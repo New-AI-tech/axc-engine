@@ -36,13 +36,13 @@ export default function App() {
               <span className="text-yellow-500 text-xs uppercase tracking-[0.5em] font-medium mb-6 block">
                 Luxury Travel | Storytelling | AI-Optimized Experiences ™
               </span>
-              <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-[0.9] drop-shadow-2xl">
-                The <span className="text-zinc-300 italic">AI</span> <br />
+              <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 leading-[0.9] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                The <span className="text-zinc-400 italic">AI</span> <br />
                 Concierge.
               </h1>
-              <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Senior Luxury Travel Consultant meets Agentic AI Engineer. <br />
-                Bridging the gap between <span className="text-zinc-100">high-end hospitality</span> and <span className="text-zinc-100">cutting-edge automation</span>.
+
+              <p className="text-zinc-200 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed drop-shadow-lg">
+                Senior Luxury Travel Consultant meets Agentic AI Engineer.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
