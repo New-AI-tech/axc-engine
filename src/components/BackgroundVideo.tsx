@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default function BackgroundVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(err => console.error("Autoplay blocked:", err));
+    }
+  }, []);
+
   return (
     <div className="fixed inset-0 overflow-hidden bg-black" style={{ zIndex: -1 }}>
       <video
-        key="motf-video"
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        /* LOGICAL FIX: Adding a poster and absolute positioning to prevent 'Black Screen' lag */
-        poster="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Museum_of_the_Future_Dubai_Drone_Shot.mp4/640px-Museum_of_the_Future_Dubai_Drone_Shot.mp4.jpg"
-        className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-[0.7] transition-opacity duration-1000"
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-[0.75]"
       >
-        <source
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Museum_of_the_Future_Dubai_Drone_Shot.mp4"
-          type="video/mp4"
-        />
+        {/* LOGICAL FIX: Referencing the local public asset directly */}
+        <source src="/bg-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
