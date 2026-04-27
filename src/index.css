@@ -12,7 +12,7 @@ body {
   padding: 0;
   background-color: #000000 !important;
   /* Base layer must be black */
-  color: white;
+  color: yellow;
   overflow-x: hidden;
 }
 

@@ -17,7 +17,7 @@ import { TIPS } from './constants';
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-white overflow-x-hidden font-sans">
+    <div className="min-h-screen selection:bg-yellow-500 selection:text-black bg-transparent text-yellow-400 overflow-x-hidden font-sans">
 
       {/* Level -1: Atmosphere */}
       <BackgroundVideo />

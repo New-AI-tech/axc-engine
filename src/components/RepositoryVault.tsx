@@ -7,7 +7,7 @@ const projects = [
     title: "Dubai Kiosk 🇦🇪",
     description: "The 'Golden Triangle' Architecture: A multi-cloud Headless Kiosk for luxury tourism. Real-time Voice-to-Visual sync via Vapi.ai and Socket.io bridge.",
     tech: ["Vapi.ai", "Node.js", "Socket.io", "React"],
-    link: "https://github.com/AIexpert-ig/dubai-kiosk",
+    link: "https://aiexpert-ig.github.io/dubai-kiosk",
     github: "https://github.com/AIexpert-ig/dubai-kiosk",
     icon: Cpu,
     status: "Live"
