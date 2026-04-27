@@ -37,7 +37,7 @@ Performant: Code-split React architecture using Vite.
 Install Dependencies:
 npm install`,
     tech: ["PostgreSQL", "React", "Node.js", "Vercel"],
-    link: "https://faryal-al-hosary.vercel.app/",
+    link: "https://booking-app-gamma-coral.vercel.app/",
     github: "https://github.com/AIexpert-ig/faryal-al-hosary",
     icon: Layers,
     status: "Live"
