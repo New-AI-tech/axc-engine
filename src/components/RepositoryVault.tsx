@@ -23,7 +23,19 @@ const projects = [
   },
   {
     title: "Faryal Al Hosary ERP",
-    description: "Enterprise ERP & Bridal Vault. Features a PostgreSQL availability engine, SKU-level tracking, and specialized luxury garment management.",
+    description: `Luxury Booking App & Stylist AI
+
+Enterprise dress reservation and availability management for luxury rental houses, stylists, and ateliers, powered by Gemini AI.
+🚀 Features
+
+Real-time Inventory: Managed via Google Cloud Firestore.
+AI Stylist: Integrated with Gemini Pro for contextual outfit recommendations.
+Secure: strict RBAC via Firestore Security Rules.
+Performant: Code-split React architecture using Vite.
+🛠️ Setup Instructions
+
+Install Dependencies:
+npm install`,
     tech: ["PostgreSQL", "React", "Node.js", "Vercel"],
     link: "https://faryal-al-hosary.vercel.app/",
     github: "https://github.com/AIexpert-ig/faryal-al-hosary",
@@ -64,7 +76,7 @@ export default function ProjectVault() {
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{project.title}</h3>
-            <p className="text-white/60 mb-6 leading-relaxed text-sm">{project.description}</p>
+            <p className="text-white/60 mb-6 leading-relaxed text-sm whitespace-pre-wrap">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tech.map(t => (
