@@ -7,7 +7,7 @@ export default function BackgroundVideo() {
     if (videoRef.current) {
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = true;
-      videoRef.current.play().catch(err => console.error("Autoplay blocked:", err));
+      videoRef.current.play().catch(() => { /* Silently ignore low-power mode autoplay rejections */ });
     }
   }, []);
 
